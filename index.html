@@ -4,6 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Генератор на ястия</title>
+    <link rel="canonical" href="https://hrana.rimichka.com/" />
+    <meta name="theme-color" content="#fff" />
+    <meta property="og:url" content="https://hrana.rimichka.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Генератор на ястия" />
+    <meta
+      property="og:description"
+      content="Забавен генератор на случайни ястия"
+    />
+    <meta
+      property="og:image"
+      content="https://hrana.rimichka.com/marketing_fb.png"
+    />
+    <meta property="fb:app_id" content="130295067681380" />
     <style>
       .wrap {
         font-size: 1.4em;
@@ -32,7 +46,7 @@
       <hr />
       <form id="form" action="#">
         <p>В менюто днес предлагаме:</p>
-        <div class="frame"><em id="food"></em></div>
+        <div class="frame"><em id="food">JavaScript трябва да работи</em></div>
         <br />
         <button type="submit">Нещо друго?</button>
       </form>
@@ -48,7 +62,15 @@
         "морковен",
         "овчарски",
         "печен",
-        "шопски"
+        "шопски",
+        "кисел",
+        "кокосов",
+        "маслен",
+        "кондензиран",
+        "запечен",
+        "карамелизиран",
+        "пълнен",
+        "чеснов"
       ];
       adj[1] = [
         "вита",
@@ -57,7 +79,15 @@
         "морковена",
         "овчарска",
         "печена",
-        "шопска"
+        "шопска",
+        "кисела",
+        "кокосова",
+        "маслена",
+        "кондензирана",
+        "запечена",
+        "карамелизирана",
+        "пълнена",
+        "чеснова"
       ];
       adj[2] = [
         "вито",
@@ -66,12 +96,22 @@
         "морковено",
         "овчарско",
         "печено",
-        "шопско"
+        "шопско",
+        "кисело",
+        "кокосово",
+        "маслено",
+        "кондензирано",
+        "запечено",
+        "карамелизирано",
+        "пълнено",
+        "чесново"
       ];
       noun[0] = [
+        "бекон",
         "гювеч",
         "картоф",
         "кекс",
+        "крема",
         "кускус",
         "мус",
         "мъфин",
@@ -79,23 +119,45 @@
         "пастет",
         "сладкиш",
         "чийзкейк",
-        "шоколад"
+        "шоколад",
+        "огретен",
+        "чурек",
+        "локум",
+        "конфитюр",
+        "месо",
+        "ориз"
       ];
       noun[1] = [
+        "юфка",
         "баклава",
         "баница",
         "кифла",
         "кокошка",
         "леща",
+        "мусака",
         "палачинка",
+        "наденица",
         "пуйка",
         "сарма",
         "супа",
+        "риба",
+        "круша",
         "тиква",
         "торта",
-        "чорба"
+        "чорба",
+        "кайма"
       ];
-      noun[2] = ["пюре", "смути", "сирене", "къри", "руло"];
+      noun[2] = [
+        "пюре",
+        "смути",
+        "сирене",
+        "къри",
+        "руло",
+        "зеле",
+        "мляко",
+        "тесто",
+        "хлебче"
+      ];
       var suffix = [
         "",
         "в тенджера",
@@ -107,7 +169,13 @@
         "с маслини",
         "с нахут",
         "с ягоди",
-        "със сирене"
+        "със сирене",
+        "с булгур",
+        "със заливка",
+        "с куркума",
+        "на тиган",
+        "по френски",
+        "на фурна"
       ];
 
       function pickRandom(arr) {
@@ -129,6 +197,11 @@
       };
       food.innerHTML = generate();
     </script>
-    <img src="http://topsitecounter.appspot.com/t" alt="Top Site Counter" width="1" height="1" />
+    <img
+      src="//topsitecounter.appspot.com/t"
+      alt="Top Site Counter"
+      width="1"
+      height="1"
+    />
   </body>
 </html>
