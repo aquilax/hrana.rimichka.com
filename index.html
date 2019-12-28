@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Генератор на ястия</title>
+    <style>
+      .wrap {
+        font-size: 1.4em;
+        margin: 0 auto;
+        max-width: 600px;
+        text-align: center;
+      }
+      .frame {
+        background: #fce9c1;
+        padding: 2em 0;
+        border: 1px dashed #c4a000;
+      }
+      #food:before {
+        content: "🙞";
+        margin-right: 0.4em;
+      }
+      #food:after {
+        content: "🙜";
+        margin-left: 0.4em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Генератор на ястия</h1>
+      <hr />
+      <form id="form" action="#">
+        <p>В менюто днес предлагаме:</p>
+        <div class="frame"><em id="food"></em></div>
+        <br />
+        <button type="submit">Нещо друго?</button>
+      </form>
+    </div>
+    <script>
+      var adj = [];
+      var noun = [];
+
+      adj[0] = [
+        "вит",
+        "зеленчуков",
+        "крем",
+        "морковен",
+        "овчарски",
+        "печен",
+        "шопски"
+      ];
+      adj[1] = [
+        "вита",
+        "зеленчукова",
+        "крем",
+        "морковена",
+        "овчарска",
+        "печена",
+        "шопска"
+      ];
+      adj[2] = [
+        "вито",
+        "зеленчуково",
+        "крем",
+        "морковено",
+        "овчарско",
+        "печено",
+        "шопско"
+      ];
+      noun[0] = [
+        "гювеч",
+        "картоф",
+        "кекс",
+        "кускус",
+        "мус",
+        "мъфин",
+        "пай",
+        "пастет",
+        "сладкиш",
+        "чийзкейк",
+        "шоколад"
+      ];
+      noun[1] = [
+        "баклава",
+        "баница",
+        "кифла",
+        "кокошка",
+        "леща",
+        "палачинка",
+        "пуйка",
+        "сарма",
+        "супа",
+        "тиква",
+        "торта",
+        "чорба"
+      ];
+      noun[2] = ["пюре", "смути", "сирене", "къри", "руло"];
+      var suffix = [
+        "",
+        "в тенджера",
+        "на скара",
+        "на шиш",
+        "по манастирски",
+        "по селски",
+        "по тракийски",
+        "с маслини",
+        "с нахут",
+        "с ягоди",
+        "със сирене"
+      ];
+
+      function pickRandom(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      function generate() {
+        g = Math.floor(Math.random() * adj.length);
+        return [pickRandom(adj[g]), pickRandom(noun[g]), pickRandom(suffix)]
+          .join(" ")
+          .trim()
+          .replace(/\s+/g, " ");
+      }
+      var form = document.getElementById("form");
+      var food = document.getElementById("food");
+      form.onsubmit = function(event) {
+        event.preventDefault();
+        food.innerHTML = generate();
+      };
+      food.innerHTML = generate();
+    </script>
+    <img src="http://topsitecounter.appspot.com/t" alt="Top Site Counter" width="1" height="1" />
+  </body>
+</html>
