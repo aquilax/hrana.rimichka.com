@@ -328,6 +328,9 @@
       form.onsubmit = function(event) {
         event.preventDefault();
         food.innerHTML = generate();
+        gtag('event', 'page_view', {
+          page_path: '/refresh'
+        });
       };
       food.innerHTML = generate();
     </script>
